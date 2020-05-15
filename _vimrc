@@ -188,7 +188,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'powerline/powerline'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -612,3 +612,6 @@ function! CopyMatches(reg) range
 endfunction
 command! -range=% -register CopyMatches call CopyMatches(<q-reg>)
 command! -range=% -register CM <line1>,<line2> call CopyMatches(<q-reg>)
+
+" [Coc]
+let g:coc_start_at_startup = 0
