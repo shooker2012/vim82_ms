@@ -614,4 +614,8 @@ command! -range=% -register CopyMatches call CopyMatches(<q-reg>)
 command! -range=% -register CM <line1>,<line2> call CopyMatches(<q-reg>)
 
 " [Coc]
-let g:coc_start_at_startup = 0
+let g:coc_start_at_startup = 1
+inoremap <silent><expr> <c-y> coc#refresh()
+
+" [neocomplete]
+let g:neocomplete#enable_at_startup = 0
