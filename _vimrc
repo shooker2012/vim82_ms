@@ -196,9 +196,9 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-exchange'
 
 Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-function'
 Plug 'kana/vim-textobj-lastpat'
 call plug#end()
 
@@ -623,7 +623,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> <Leader>d <Plug>(coc-definition)
-nmap <silent> <Leader>y <Plug>(coc-type-definition)
+nmap <silent> <Leader>e <Plug>(coc-type-definition)
 nmap <silent> <Leader>i <Plug>(coc-implementation)
 nmap <silent> <Leader>f <Plug>(coc-references)
 
@@ -637,6 +637,12 @@ xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Hide all float window.
+imap <c-l> <c-o><Plug>(coc-float-hide)
 
 " Find symbol of current document.
 nnoremap <silent> <Leader>o  :<C-u>CocList outline<cr>
