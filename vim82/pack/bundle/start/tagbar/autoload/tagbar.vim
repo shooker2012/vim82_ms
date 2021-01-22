@@ -452,8 +452,16 @@ function! s:InitTypes() abort
     let type_lua = s:TypeInfo.New()
     let type_lua.ctagstype = 'lua'
     let type_lua.kinds     = [
-        \ {'short' : 'f', 'long' : 'functions', 'fold' : 0, 'stl' : 1}
+        \ {'short' : 'f', 'long' : 'functions', 'fold' : 0, 'stl' : 1},
+        \ {'short' : 'c', 'long' : 'classes',   'fold' : 0, 'stl' : 1},
     \ ]
+    let type_lua.sro        = '::'
+    let type_lua.kind2scope = {
+        \ 'c' : 'class',
+    \ }
+    let type_lua.scope2kind = {
+        \ 'class'     : 'c',
+    \ }
     let s:known_types.lua = type_lua
     " Make {{{3
     let type_make = s:TypeInfo.New()
