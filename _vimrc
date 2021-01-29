@@ -21,6 +21,9 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" disable to add a unwanted newline at the end of the file.
+set nofixendofline
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
