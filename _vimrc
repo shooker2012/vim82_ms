@@ -328,6 +328,7 @@ function! s:EscapeForCMDC( word )
 	let word = substitute( word, '(', '^(', "g" )
 	let word = substitute( word, ')', '^)', "g" )
 	let word = substitute( word, '<', '^<', "g" )
+	let word = substitute( word, '>', '^>', "g" )
 
 	return word
 endfunction
