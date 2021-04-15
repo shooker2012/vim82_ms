@@ -165,6 +165,25 @@ nnoremap <silent> <F9> :tabe %<CR>:NERDTreeFind<CR><C-W>l:copen<CR><C-W>k
 nnoremap <silent> <F10> :!start explorer.exe /select,<C-R>=expand("%:p")<CR><CR><CR>
 vnoremap <silent> <F10> :!start explorer.exe /select,<C-R>=expand("%:p")<CR><CR><CR>
 
+function! CopyFileName(...)
+	let ret = ""
+	if a:0 > 0
+		let ret = expand("%".a:1)
+	else
+		let ret = expand("%:p")
+	endif
+
+	if a:0 > 1
+		let ret = substitute( ret, "\\", a:2, 'g' )
+		let ret = substitute( ret, "/", a:2, 'g' )
+	endif
+
+	let @*=ret
+endfunction
+command! -nargs=* CopyFileName call CopyFileName(<f-args>)
+nnoremap <silent> <F11> :CopyFileName<CR>
+
+
 "map [t and ]t: jump to parent tag
 nnoremap ]t vatatv
 nnoremap [t vatatov
@@ -188,7 +207,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'powerline/powerline'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
