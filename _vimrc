@@ -246,6 +246,11 @@ let NERDTreeChDirMode=1
 "[plugin]Fugitive
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+"[plugin]ctrlp
+let g:ctrlp_regexp = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 0
+
 "shortcut
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR>:<C-u>MarkClear<CR><C-l>
 nnoremap <silent> <C-k> :<C-u>Mark<CR>
